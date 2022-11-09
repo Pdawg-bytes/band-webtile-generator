@@ -17,15 +17,15 @@
         <Image Source="ms-appx:///Assets/webtile_gen_icon.png"/>
         <TextBlock Text="Microsoft Band WebTile Generator" FontSize="16" Margin="10,10,0,0"/>
         <Frame Grid.Row="1" x:Name="stepsframe"/>
-        <muxc:NavigationView x:Name="stepnavview" PaneDisplayMode="Top" Grid.Row="1" IsBackEnabled="False" IsBackButtonVisible="Collapsed" SelectionChanged="stepnavview_SelectionChanged">
+        <muxc:NavigationView x:Name="stepnavview" Grid.Row="1" IsBackEnabled="False" IsBackButtonVisible="Collapsed" ItemInvoked="stepnavview_ItemInvoked" Background="{ThemeResource ElementAcrylicBrush}">
             <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem  Content="Home" Tag="Home" Icon="Home"/>
+                <muxc:NavigationViewItem  Content="Home" x:Name="Home" Icon="Home"/>
                 <muxc:NavigationViewItemSeparator/>
-                <muxc:NavigationViewItem  Content="Step 1" Tag="Step1" />
-                <muxc:NavigationViewItem  Content="Step 2" Tag="Step2" />
-                <muxc:NavigationViewItem  Content="Step 3" Tag="Step3" />
-                <muxc:NavigationViewItem  Content="Step 4" Tag="Step4" />
-                <muxc:NavigationViewItem  Content="Step 5" Tag="Step5" />
+                <muxc:NavigationViewItem  Content="Tile Builder" x:Name="Builder">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEC7A;"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
             </muxc:NavigationView.MenuItems>
             <Frame x:Name="contentFrame" Background="{ThemeResource SystemControlAcrylicWindowBrush}"/>
         </muxc:NavigationView>

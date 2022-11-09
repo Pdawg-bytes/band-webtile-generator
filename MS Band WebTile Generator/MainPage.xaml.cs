@@ -29,23 +29,18 @@ namespace MS_Band_WebTile_Generator
             contentFrame.Navigate(typeof(Home));
         }
 
-        private void stepnavview_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
+        private void stepnavview_ItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)
         {
-            if (args.IsSettingsSelected)
+            var item = args.InvokedItemContainer;
+            switch (item.Name)
             {
-                contentFrame.Navigate(typeof(Settings));
-            }
-            else
-            {
-                NavigationViewItem item = args.SelectedItem as NavigationViewItem;
-
-                switch (item.Tag.ToString())
-                {
-                    case "Home":
-                    default:
-                        contentFrame.Navigate(typeof(Home));
-                        break;
-                }
+                case "Home":
+                default:
+                    contentFrame.Navigate(typeof(Home));
+                    break;
+                case "Builder":
+                    contentFrame.Navigate(typeof(Builder));
+                    break;
             }
         }
     }

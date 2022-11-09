@@ -18,7 +18,7 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint>83C420737C8AC5B842776D30A40483F47DE49684</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>0E6B4D6C723055DA2527EF41E2181FB05CE0B024</PackageCertificateThumbprint>
     <PackageCertificateKeyFile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -121,6 +121,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Builder.xaml.cs">
+      <DependentUpon>Builder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BuilderPages\DataBuilder.xaml.cs">
+      <DependentUpon>DataBuilder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BuilderPages\LayoutBuilder.xaml.cs">
+      <DependentUpon>LayoutBuilder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -138,6 +147,12 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ContentLayoutAssets\MetricsWithIconsImage.png" />
+    <Content Include="Assets\ContentLayoutAssets\NoScrollingTextImage.png" />
+    <Content Include="Assets\ContentLayoutAssets\ScrollingTextImage.png" />
+    <Content Include="Assets\ContentLayoutAssets\SingleMetricImage.png" />
+    <Content Include="Assets\ContentLayoutAssets\SingleMetricWithIconImage.png" />
+    <Content Include="Assets\ContentLayoutAssets\SingleMetricWithSecondaryImage.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
@@ -197,6 +212,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Builder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BuilderPages\DataBuilder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BuilderPages\LayoutBuilder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

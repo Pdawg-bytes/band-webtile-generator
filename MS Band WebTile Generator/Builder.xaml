@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="MS_Band_WebTile_Generator.Builder"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MS_Band_WebTile_Generator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical">
+            <TextBlock Text="Tile Builder" FontSize="50" Margin="15,15,0,0"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+            <TextBlock Text="To start building your webtile, click continue." TextWrapping="WrapWholeWords" FontSize="30" FontWeight="Medium"/>
+            <Button x:Name="WebtileStartButton" Width="150" Height="50" Background="{ThemeResource SystemAccentColor}" Margin="0,20,0,20" Content="Continue" FontSize="20" Click="WebtileStartButton_Click" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <TextBlock Text="Disclaimer: This app does NOT fully generate a Web Tile. Since there is so much customizability in Web Tiles, some of the code will have to be written by you to unlock their full potential. Don't worry, it's simple! Guides and instructions will be given later in the creation process." TextWrapping="WrapWholeWords" FontSize="15" Width="600" FontWeight="Thin" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"/>
+    </Grid>
+</Page>

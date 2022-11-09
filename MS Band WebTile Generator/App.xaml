@@ -8,6 +8,22 @@
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
             </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Dark">
+                    <AcrylicBrush x:Key="ElementAcrylicBrush"
+                          TintColor="Black"
+                          BackgroundSource="Backdrop"
+                          TintOpacity="0.1"
+                          FallbackColor="DimGray"/>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <AcrylicBrush x:Key="ElementAcrylicBrush"
+                          TintColor="White"
+                          BackgroundSource="Backdrop"
+                          TintOpacity="0.1"
+                          FallbackColor="DimGray"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
