@@ -12,8 +12,8 @@
         <ScrollViewer x:Name="DataScrollViewer">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Choose your data sources" FontSize="40" FontWeight="Medium" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="WrapWholeWords"/>
-                <TextBlock Text="Here is were you assign dynamic RSS or ATOM data to your WebTile. The RSS or ATOM link you submit will be broken down into a tree view, from which you can select any of the dynamic data sources to display on your tile." TextWrapping="WrapWholeWords" FontSize="15" Margin="20,20,20,20"/>
-                <TextBox Header="Data feed link" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="20" FontWeight="Medium"/>
+                <TextBlock Text="Here is were you assign dynamic RSS or ATOM JSON data to your WebTile. " TextWrapping="WrapWholeWords" FontSize="15" Margin="20,20,20,20"/>
+                <TextBox Header="Data feed link" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="20" FontWeight="Medium" />
             </StackPanel>
         </ScrollViewer>
     </Grid>
