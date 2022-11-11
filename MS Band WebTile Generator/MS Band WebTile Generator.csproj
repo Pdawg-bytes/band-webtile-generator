@@ -124,11 +124,17 @@
     <Compile Include="Builder.xaml.cs">
       <DependentUpon>Builder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BuilderPages\CompleteBuilder.xaml.cs">
+      <DependentUpon>CompleteBuilder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BuilderPages\DataBuilder.xaml.cs">
       <DependentUpon>DataBuilder.xaml</DependentUpon>
     </Compile>
     <Compile Include="BuilderPages\LayoutBuilder.xaml.cs">
       <DependentUpon>LayoutBuilder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BuilderPages\StyleBuilder.xaml.cs">
+      <DependentUpon>StyleBuilder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -158,6 +164,7 @@
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\mailicon.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
     <Content Include="Assets\SmallTile.scale-150.png" />
@@ -216,11 +223,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BuilderPages\CompleteBuilder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BuilderPages\DataBuilder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BuilderPages\LayoutBuilder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BuilderPages\StyleBuilder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

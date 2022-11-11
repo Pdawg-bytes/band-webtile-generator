@@ -16,5 +16,8 @@
                 <TextBox Header="Data feed link" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="20" FontWeight="Medium" />
             </StackPanel>
         </ScrollViewer>
+        <Button x:Name="DataBack" Content="Go back" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,180,30" Click="DataBack_Click"/>
+        <Button x:Name="DataNext" Content="Next" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,30" Background="{ThemeResource SystemAccentColor}" Click="DataNext_Click"/>
+        <TextBlock Text="Here you see only one data feed link box. WebTiles support multiple data feeds, but it is standard to only use one. If you wish to add more, steps will be provided at the end of the creation process." HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="15" FontWeight="Thin" Margin="0,0,0,20" TextWrapping="WrapWholeWords" Width="400"/>
     </Grid>
 </Page>

@@ -21,21 +21,16 @@ namespace MS_Band_WebTile_Generator.BuilderPages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class DataBuilder : Page
+    public sealed partial class CompleteBuilder : Page
     {
-        public DataBuilder()
+        public CompleteBuilder()
         {
             this.InitializeComponent();
         }
 
-        private void DataBack_Click(object sender, RoutedEventArgs e)
+        private void CompleteBack_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MS_Band_WebTile_Generator.BuilderPages.LayoutBuilder), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromLeft });
-        }
-
-        private void DataNext_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MS_Band_WebTile_Generator.BuilderPages.StyleBuilder), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromRight });
+            this.Frame.Navigate(typeof(MS_Band_WebTile_Generator.BuilderPages.StyleBuilder), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromLeft });
         }
     }
 }
