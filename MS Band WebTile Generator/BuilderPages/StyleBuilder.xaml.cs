@@ -18,6 +18,9 @@ using Newtonsoft.Json;
 using System.Xml.Linq;
 using System.Diagnostics;
 using Windows.UI.Xaml.Media.Imaging;
+using System.Runtime.CompilerServices;
+using System.Text;
+using Windows.Storage.Pickers;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,6 +34,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public StyleBuilder()
         {
             this.InitializeComponent();
+            RefreshInt = 15;
+            RefreshSlider.Value = 15;
+            StyleNext.IsEnabled = false;
         }
 
         public static string ResourceType;
@@ -58,74 +64,77 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         private void TitleTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TileTitle = TitleTextBox.Text;
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
         }
 
         private void DescriptionBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             DescriptionTile = DescriptionBox.Text;
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
         }
 
         private void AuthorBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             AuthorTile = AuthorBox.Text;
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
         }
 
         private void OrgBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             OrgTile = OrgBox.Text;
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
         }
 
         private void eBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TileEmail = eBox.Text;
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
         }
 
+        int stradd = 0;
+        public static string filename;
         private async void Browse46_Click(object sender, RoutedEventArgs e)
         {
-            var picker = new Windows.Storage.Pickers.FileOpenPicker();
-            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
-            picker.FileTypeFilter.Add(".png");
-
-            Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-            if (file != null)
+            StorageFolder subFolder = await DownloadsFolder.CreateFolderAsync("icons", CreationCollisionOption.GenerateUniqueName);
+            FileOpenPicker openPicker = new FileOpenPicker();
+            openPicker.ViewMode = PickerViewMode.List;
+            openPicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            openPicker.FileTypeFilter.Add(".png");
+            IReadOnlyList<StorageFile> files = await openPicker.PickMultipleFilesAsync();
+            if (files.Count > 0)
             {
-                // I need to copy the file that is selected
+                foreach (StorageFile file in files.Take(2))
+                {
+                    stradd++;
+                    string final = "str" + stradd;
+                    switch (stradd)
+                    {
+                        case 1:
+                            filename = "tileIcon.png";
+                            break;
+                        case 2:
+                            filename = "badgeIcon.png";
+                            break;
+                    }
+                    try
+                    {
+                        StorageFile copiedFile = await file.CopyAsync(subFolder);
+                        await copiedFile.RenameAsync(filename);
+                    }
+                    catch
+                    {
+                        ExceptionFileAccess.IsOpen = true;
+                    }
+                }
             }
             else
             {
-                // Do nothing
+                ExceptionFileCreate.IsOpen = true;
             }
         }
 
-        private async void Browse24_Click(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            var picker = new Windows.Storage.Pickers.FileOpenPicker();
-            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
-            picker.FileTypeFilter.Add(".png");
-
-            Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-            if (file != null)
-            {
-                // Application now has read/write access to the picked file
-            }
-            else
-            {
-                // Do nothing
-            }
-        }
-
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                StorageFolder subFolder = await DownloadsFolder.CreateFolderAsync("icons", CreationCollisionOption.FailIfExists);
-            }
-            catch
-            {
-                ExceptionFileAccess.IsOpen = true;
-            }
             TilePage1Image.Source = SampleImage;
         }
 
@@ -199,8 +208,15 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             };
 
             var json = JsonConvert.SerializeObject(obj, Formatting.Indented);
-            StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json");
-            await FileIO.WriteTextAsync(manifestFile, json);
+            try
+            {
+                StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
+                await FileIO.WriteTextAsync(manifestFile, json);
+            }
+            catch
+            {
+                ExceptionFileAccess.IsOpen = true;
+            }
         }
     }
 }

@@ -33,6 +33,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public DataBuilder()
         {
             this.InitializeComponent();
+            DataNext.IsEnabled = false;
         }
 
         private void DataBack_Click(object sender, RoutedEventArgs e)
@@ -69,12 +70,14 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             // Handle bad resource
             catch { 
                 feed = null;
+                DataNext.IsEnabled = false;
                 DataStatus.Text = "Data feed unavailable, please try again later.";
                 DataStatus.Foreground = new SolidColorBrush(Colors.Red);
             }
 
             if (feed != null)
             {
+                DataNext.IsEnabled = true;
                 // Push parsed data
                 foreach (var element in feed.Items.Take(1))
                 {

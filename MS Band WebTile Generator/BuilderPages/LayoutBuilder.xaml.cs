@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Contacts.DataProvider;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -27,7 +28,13 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public LayoutBuilder()
         {
             this.InitializeComponent();
+            LayoutNext.IsEnabled = false;
+            lrb_Selected = false;
+            prb_Selected = false;
         }
+
+        public static bool prb_Selected;
+        public static bool lrb_Selected;
 
         private void LayoutBack_Click(object sender, RoutedEventArgs e)
         {
@@ -41,6 +48,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
 
         private void HandlePageCheck(object sender, RoutedEventArgs e)
         {
+            prb_Selected = true;
             RadioButton prb = sender as RadioButton;
             StyleBuilder.PageType = prb.Name;
             switch (prb.Name)
@@ -65,10 +73,12 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.SampleImage = new BitmapImage(new Uri("ms-appx:///Assets/ContentLayoutAssets/SingleMetricWithSecondaryImage.png"));
                     break;
             }
+            LayoutNext.IsEnabled = (prb_Selected == true) && (lrb_Selected == true);
         }
 
         private void HandleResourceTypeCheck(object sender, RoutedEventArgs e)
         {
+            lrb_Selected = true;
             RadioButton lrb = sender as RadioButton;
             if (lrb.Name == "Simple")
             {
@@ -94,6 +104,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                 MSBand_SingleMetricWithSecondary.IsEnabled = false;
                 StyleBuilder.ResourceType = "Feed";
             }
+            LayoutNext.IsEnabled = (prb_Selected == true) && (lrb_Selected == true);
         }
     }
 }
