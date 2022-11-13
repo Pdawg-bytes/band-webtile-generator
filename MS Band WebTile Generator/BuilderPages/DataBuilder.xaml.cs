@@ -48,6 +48,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public static string rsslink;
         private void DataFeedBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            StyleBuilder.ResourceURL = DataFeedBox.Text;
             rsslink = DataFeedBox.Text;
             ParseRSS();
         }

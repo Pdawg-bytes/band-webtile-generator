@@ -16,19 +16,20 @@
                 <StackPanel Width="530" HorizontalAlignment="Left">
                     <TextBlock Text="Customize your tile" FontSize="40" FontWeight="Medium" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="WrapWholeWords"/>
                     <TextBlock Text="This is where you will assign some of the data used to customize your tile." TextWrapping="WrapWholeWords" FontSize="15" Margin="20,20,20,0"/>
-                    <Image x:Name="TilePage1Image" Height="90" Margin="20,20,20,0" Source="ms-appx:///Assets/ContentLayoutAssets/NoScrollingTextImage.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Image x:Name="TilePage1Image" Height="90" Margin="20,20,20,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <TextBlock Text="This is a rough format representation of what page 1 of your tile will look like." FontSize="10" Margin="20,0,10,0" Width="515" HorizontalAlignment="Left"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel VerticalAlignment="Top" Width="570" HorizontalAlignment="Left">
-                        <TextBox Header="Title" Width="400" Height="60" x:Name="TitleTextBox" Margin="20,20,0,15" HorizontalAlignment="Left" MaxLength="25" TextChanged="TitleTextBox_TextChanged"/>
-                        <TextBox Header="Description" Width="400" Height="60" x:Name="DescriptionBox" HorizontalAlignment="Left" Margin="20,0,0,15" MaxLength="60" TextChanged="DescriptionBox_TextChanged"/>
+                        <TextBox Header="Title" Width="400" Height="60" x:Name="TitleTextBox" Margin="20,20,0,15" HorizontalAlignment="Left" MaxLength="20" TextChanged="TitleTextBox_TextChanged"/>
+                        <TextBox Header="Description" Width="400" Height="60" x:Name="DescriptionBox" HorizontalAlignment="Left" Margin="20,0,0,15" MaxLength="100" TextChanged="DescriptionBox_TextChanged"/>
                         <TextBox Header="Author" Width="400" Height="60" x:Name="AuthorBox" HorizontalAlignment="Left" Margin="20,0,0,15" MaxLength="25" TextChanged="AuthorBox_TextChanged"/>
-                        <TextBox Header="Organization" Width="400" Height="60" x:Name="OrgBox" HorizontalAlignment="Left" Margin="20,0,0,15" MaxLength="25" TextChanged="OrgBox_TextChanged"/>
-                        <Slider Minimum="15" Maximum="120" x:Name="RefreshSlider" Margin="20,10,0,0" Header="Refresh rate of data in the tile (in minutes)" ValueChanged="RefreshSlider_ValueChanged"/>
+                        <TextBox Header="Organization" Width="400" Height="60" x:Name="OrgBox" HorizontalAlignment="Left" Margin="20,0,0,15" MaxLength="50" TextChanged="OrgBox_TextChanged"/>
+                        <TextBox Header="Contact E-Mail" Width="400" Height="60" x:Name="eBox" HorizontalAlignment="Left" Margin="20,0,0,15" MaxLength="50" TextChanged="eBox_TextChanged"/>
+                        <Slider Minimum="15" Maximum="120" x:Name="RefreshSlider" Margin="20,10,0,10" Header="Tile data refresh interval" ValueChanged="RefreshSlider_ValueChanged" HorizontalAlignment="Left" Width="400"/>
                         <TextBlock Text="Browse for 46x46 icon (must be a transparent PNG with only white color, this is required!)" Height="24" Margin="20,0,0,0"/>
                         <Button Content="Browse..." x:Name="Browse46" VerticalAlignment="Center" HorizontalAlignment="Left" Click="Browse46_Click" Margin="20,0,0,10"/>
-                        <TextBlock Text="Browse for 24x24 icon (optional, you only need it for badge icons)" Height="24" Margin="20,0,0,0" />
+                        <TextBlock Text="Browse for 24x24 icon (must be a transparent PNG with only white color, this is required!)" Height="24" Margin="20,0,0,0" />
                         <Button Content="Browse..." x:Name="Browse24" VerticalAlignment="Center" HorizontalAlignment="Left" Click="Browse24_Click" Margin="20,0,0,20"/>
                     </StackPanel>
                 </StackPanel>
@@ -36,6 +37,6 @@
         </ScrollViewer>
         <Button x:Name="StyleBack" Content="Go back" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,180,30" Click="StyleBack_Click"/>
         <Button x:Name="StyleNext" Content="Next" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,30" Background="{ThemeResource SystemAccentColor}" Click="StyleNext_Click"/>
-        <muxc:InfoBar x:Name="ExceptionFileAccess" VerticalAlignment="Bottom" HorizontalAlignment="Center" Severity="Error" Message="Filesystem exception thrown!" Title="Error" IsOpen="False" Margin="0,0,0,20" Width="400"/>
+        <muxc:InfoBar x:Name="ExceptionFileAccess" VerticalAlignment="Bottom" HorizontalAlignment="Center" Severity="Error" Message="App folder already exists, delete it from your Downloads folder." Title="Filesystem Exception" IsOpen="False" Margin="0,0,0,20" Width="400"/>
     </Grid>
 </Page>

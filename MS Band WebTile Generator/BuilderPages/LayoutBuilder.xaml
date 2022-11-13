@@ -15,23 +15,23 @@
                 <TextBlock Text="Before you begin creating your new tile, determine if you require a single page tile, a multiple page tile (up to 7 pages), or a feed tile for an RSS data feed. Each radio button has a label, and these labels you see will be used in code. In the JSON file of the webtile (manifest.json), the pages section will contain a property named layout. This property will be filled with one of the six predefined layouts that you see here. If you ever wish to change the layout of the tiles, just use the provided names below." TextWrapping="WrapWholeWords" FontSize="15" Margin="20,20,20,20"/>
                 <TextBlock Text="Page options" FontSize="20" Margin="20,0,0,0"/>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,10,0,20">
-                    <RadioButton x:Name="SinglePageRadio" GroupName="PageTypeGroup" Content="Single-page tile"/>
-                    <RadioButton x:Name="MultiPageRadio" GroupName="PageTypeGroup" Content="Multiple-page tile"/>
-                    <RadioButton x:Name="FeedPageRadio" GroupName="PageTypeGroup" Content="Feed tile"/>
+                    <RadioButton x:Name="Simple" GroupName="PageTypeGroup" Content="Single-page tile" Checked="HandleResourceTypeCheck"/>
+                    <RadioButton x:Name="Simple2" GroupName="PageTypeGroup" Content="Multiple-page tile" Checked="HandleResourceTypeCheck"/>
+                    <RadioButton x:Name="Feed" GroupName="PageTypeGroup" Content="Feed tile" Checked="HandleResourceTypeCheck"/>
                 </StackPanel>
                 <TextBlock Text="Content layouts" FontSize="20" Margin="20,0,0,0"/>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,10,0,20">
-                    <RadioButton x:Name="MBandScrollTextRadio" GroupName="ContentLayoutGroup" Content="Scrolling Text (MSBand_ScrollingText)"/>
+                    <RadioButton x:Name="MSBand_ScrollingText" GroupName="ContentLayoutGroup" Content="Scrolling Text (MSBand_ScrollingText)" Checked="HandlePageCheck"/>
                     <Image Source="ms-appx:///Assets/ContentLayoutAssets/ScrollingTextImage.png" Height="100" Margin="0,0,0,5" HorizontalAlignment="Left"/>
-                    <RadioButton x:Name="MBandNoScrollTextRadio" GroupName="ContentLayoutGroup" Content="No Scrolling Text (MSBand_NoScrollingText)"/>
+                    <RadioButton x:Name="MSBand_NoScrollingText" GroupName="ContentLayoutGroup" Content="No Scrolling Text (MSBand_NoScrollingText)" Checked="HandlePageCheck"/>
                     <Image Source="ms-appx:///Assets/ContentLayoutAssets/NoScrollingTextImage.png" Height="100" Margin="0,0,0,5" HorizontalAlignment="Left"/>
-                    <RadioButton x:Name="MBandSingleMetricRadio" GroupName="ContentLayoutGroup" Content="Single Metric (MSBand_SingleMetric)"/>
+                    <RadioButton x:Name="MSBand_SingleMetric" GroupName="ContentLayoutGroup" Content="Single Metric (MSBand_SingleMetric)" Checked="HandlePageCheck"/>
                     <Image Source="ms-appx:///Assets/ContentLayoutAssets/SingleMetricImage.png" Height="100" Margin="0,0,0,5" HorizontalAlignment="Left"/>
-                    <RadioButton x:Name="MBandSingleMetricIconRadio" GroupName="ContentLayoutGroup" Content="Single Metric With Icon (MSBand_SingleMetricWithIcon)"/>
+                    <RadioButton x:Name="MSBand_SingleMetricWithIcon" GroupName="ContentLayoutGroup" Content="Single Metric With Icon (MSBand_SingleMetricWithIcon)" Checked="HandlePageCheck"/>
                     <Image Source="ms-appx:///Assets/ContentLayoutAssets/SingleMetricWithIconImage.png" Height="100" Margin="0,0,0,5" HorizontalAlignment="Left"/>
-                    <RadioButton x:Name="MBandMetricsIconsRadio" GroupName="ContentLayoutGroup" Content="Metrics With Icons (MSBand_MetricsWithIcons)"/>
+                    <RadioButton x:Name="MSBand_MetricsWithIcons" GroupName="ContentLayoutGroup" Content="Metrics With Icons (MSBand_MetricsWithIcons)" Checked="HandlePageCheck"/>
                     <Image Source="ms-appx:///Assets/ContentLayoutAssets/MetricsWithIconsImage.png" Height="100" Margin="0,0,0,5" HorizontalAlignment="Left"/>
-                    <RadioButton x:Name="MBandSingleMetricWithSecRadio" GroupName="ContentLayoutGroup" Content="Single Metric With Secondary (MSBand_SingleMetricWithSecondary)"/>
+                    <RadioButton x:Name="MSBand_SingleMetricWithSecondary" GroupName="ContentLayoutGroup" Content="Single Metric With Secondary (MSBand_SingleMetricWithSecondary)" Checked="HandlePageCheck"/>
                     <Image Source="ms-appx:///Assets/ContentLayoutAssets/SingleMetricWithSecondaryImage.png" Height="100" HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>
