@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Loaded="Page_Loaded"
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
@@ -24,6 +25,7 @@
                         <TextBox Header="Description" Width="400" Height="60" x:Name="DescriptionBox" HorizontalAlignment="Left" Margin="20,0,0,15" MaxLength="60" TextChanged="DescriptionBox_TextChanged"/>
                         <TextBox Header="Author" Width="400" Height="60" x:Name="AuthorBox" HorizontalAlignment="Left" Margin="20,0,0,15" MaxLength="25" TextChanged="AuthorBox_TextChanged"/>
                         <TextBox Header="Organization" Width="400" Height="60" x:Name="OrgBox" HorizontalAlignment="Left" Margin="20,0,0,15" MaxLength="25" TextChanged="OrgBox_TextChanged"/>
+                        <Slider Minimum="15" Maximum="120" x:Name="RefreshSlider" Margin="20,10,0,0" Header="Refresh rate of data in the tile (in minutes)" ValueChanged="RefreshSlider_ValueChanged"/>
                         <TextBlock Text="Browse for 46x46 icon (must be a transparent PNG with only white color, this is required!)" Height="24" Margin="20,0,0,0"/>
                         <Button Content="Browse..." x:Name="Browse46" VerticalAlignment="Center" HorizontalAlignment="Left" Click="Browse46_Click" Margin="20,0,0,10"/>
                         <TextBlock Text="Browse for 24x24 icon (optional, you only need it for badge icons)" Height="24" Margin="20,0,0,0" />
@@ -34,5 +36,6 @@
         </ScrollViewer>
         <Button x:Name="StyleBack" Content="Go back" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,180,30" Click="StyleBack_Click"/>
         <Button x:Name="StyleNext" Content="Next" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,30" Background="{ThemeResource SystemAccentColor}" Click="StyleNext_Click"/>
+        <muxc:InfoBar x:Name="ExceptionFileAccess" VerticalAlignment="Bottom" HorizontalAlignment="Center" Severity="Error" Message="Filesystem exception thrown!" Title="Error" IsOpen="False" Margin="0,0,0,20" Width="400"/>
     </Grid>
 </Page>

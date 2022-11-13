@@ -12,8 +12,12 @@
         <ScrollViewer x:Name="DataScrollViewer">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Choose your data sources" FontSize="40" FontWeight="Medium" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="WrapWholeWords"/>
-                <TextBlock Text="Here is were you assign dynamic RSS or ATOM JSON data to your WebTile. " TextWrapping="WrapWholeWords" FontSize="15" Margin="20,20,20,20"/>
-                <TextBox Header="Data feed link" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="20" FontWeight="Medium" />
+                <TextBlock Text="Here is were you assign dynamic RSS or ATOM data to your WebTile. The feed will be parsed into these boxes which will then allow you to see some of the data that your selected feed is producing. If there is custom data that is not listed here, there will be ways to add it in the post creation steps." TextWrapping="WrapWholeWords" FontSize="15" Margin="20,20,20,20"/>
+                <TextBox Header="Data feed link" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="20" FontWeight="Medium" x:Name="DataFeedBox" TextChanged="DataFeedBox_TextChanged"/>
+                <TextBlock x:Name="DataStatus" Margin="20,10,0,0"/>
+                <TextBlock Text="Title:" Margin="20,10,0,0" x:Name="RSSTitle" TextWrapping="WrapWholeWords"/>
+                <TextBlock Text="Description:" Margin="20,10,0,0" x:Name="RSSDesc" TextWrapping="WrapWholeWords" Width="500" HorizontalAlignment="Left"/>
+                <TextBlock Text="Date and Time Published:" Margin="20,10,0,0" x:Name="RSSDate" TextWrapping="WrapWholeWords"/>
             </StackPanel>
         </ScrollViewer>
         <Button x:Name="DataBack" Content="Go back" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,180,30" Click="DataBack_Click"/>
