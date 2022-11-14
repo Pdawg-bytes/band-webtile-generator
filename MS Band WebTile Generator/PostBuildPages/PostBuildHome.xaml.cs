@@ -11,26 +11,20 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace MS_Band_WebTile_Generator
+namespace MS_Band_WebTile_Generator.PostBuildPages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class PostBuild : Page
+    public sealed partial class PostBuildHome : Page
     {
-        public PostBuild()
+        public PostBuildHome()
         {
             this.InitializeComponent();
-        }
-
-        private void PostTileStartButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(PostBuildPages.PostBuildHome), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromRight });
         }
     }
 }

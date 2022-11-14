@@ -9,6 +9,10 @@
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <Grid>
-
+        <TextBlock Text="Post Building" FontSize="50" Margin="15,15,0,0"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Let's finish up your webtile. To begin, click continue." FontSize="30" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button x:Name="PostTileStartButton" Width="150" Height="50" Background="{ThemeResource SystemAccentColor}" Margin="0,20,0,20" Content="Continue" FontSize="20" HorizontalAlignment="Center" Click="PostTileStartButton_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

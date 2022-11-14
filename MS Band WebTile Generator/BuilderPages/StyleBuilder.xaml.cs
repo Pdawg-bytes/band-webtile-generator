@@ -49,6 +49,12 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public static string PageType;
         public static string TileEmail;
         public static int RefreshInt;
+        public static string E1;
+        public static string E2;
+        public static string E3;
+        public static string E4;
+        public static string E5;
+        public static string E6;
 
         private void StyleBack_Click(object sender, RoutedEventArgs e)
         {
@@ -189,18 +195,33 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     {
                         new
                         {
-                            elementId = "Example Element",
-                            value = "Each element serves a different purpose, you'll see why soon (in the post build docs)",
+                            elementId = E1,
+                            value = "You may also set whatever text you want to be here.",
                         },
                         new
                         {
-                            elementId = "Example Element",
+                            elementId = E2,
                             value = "Variables defined in your resources are called like this: {{SomeDefinedVariable}}",
                         },
                         new
                         {
-                            elementId = "Example Element",
+                            elementId = E3,
                             value = "Variables defined in your resources are called like this: {{SomeDefinedVariable}}",
+                        },
+                        new
+                        {
+                            elementId = E4,
+                            value = "You may also set whatever text you want to be here.",
+                        },
+                        new
+                        {
+                            elementId = E5,
+                            value = "Variables defined in your resources are called like this: {{SomeDefinedVariable}}",
+                        },
+                        new
+                        {
+                            elementId = E6,
+                            value = "You may also set whatever text you want to be here.",
                         },
                     }
                 },       
