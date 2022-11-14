@@ -35,11 +35,17 @@ namespace MS_Band_WebTile_Generator
             switch (item.Name)
             {
                 case "Home":
-                default:
                     contentFrame.Navigate(typeof(Home));
                     break;
                 case "Builder":
                     contentFrame.Navigate(typeof(Builder));
+                    break;
+                case "PostBuild":
+                    contentFrame.Navigate(typeof(PostBuild));
+                    break;
+                case "Settings":
+                default:
+                    contentFrame.Navigate(typeof(Settings));
                     break;
             }
         }

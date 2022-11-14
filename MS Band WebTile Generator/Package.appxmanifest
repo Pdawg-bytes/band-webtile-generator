@@ -8,7 +8,7 @@
 
   <Identity
     Name="69a40742-189d-4520-b09d-2271e959c188"
-    Publisher="CN=Pdawg"
+    Publisher="CN=Pdawg Studios"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="69a40742-189d-4520-b09d-2271e959c188" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
