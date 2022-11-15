@@ -59,54 +59,45 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.E1 = "1";
                     StyleBuilder.E2 = "2";
                     StyleBuilder.E3 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E4 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E5 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E6 = "DELETE THIS ELEMENT";
                     break;
                 case "MSBand_NoScrollingText":
                     StyleBuilder.SampleImage = new BitmapImage(new Uri("ms-appx:///Assets/ContentLayoutAssets/NoScrollingTextImage.png"));
                     StyleBuilder.E1 = "1";
                     StyleBuilder.E2 = "2";
                     StyleBuilder.E3 = "3";
-                    StyleBuilder.E4 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E5 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E6 = "DELETE THIS ELEMENT";
                     break;
                 case "MSBand_SingleMetric":
                     StyleBuilder.SampleImage = new BitmapImage(new Uri("ms-appx:///Assets/ContentLayoutAssets/SingleMetricImage.png"));
                     StyleBuilder.E1 = "1";
                     StyleBuilder.E2 = "2";
                     StyleBuilder.E3 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E4 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E5 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E6 = "DELETE THIS ELEMENT";
                     break;
                 case "MSBand_SingleMetricWithIcon":
                     StyleBuilder.SampleImage = new BitmapImage(new Uri("ms-appx:///Assets/ContentLayoutAssets/SingleMetricWithIconImage.png"));
-                    StyleBuilder.E1 = "11";
-                    StyleBuilder.E2 = "12";
-                    StyleBuilder.E3 = "21";
-                    StyleBuilder.E4 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E5 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E6 = "DELETE THIS ELEMENT";
+                    StyleBuilder.E1 = "12";
+                    StyleBuilder.E2 = "21";
+                    StyleBuilder.E3 = "DELETE THIS ELEMENT";
+                    StyleBuilder.I1 = "11";
+                    StyleBuilder.I2 = "DELETE THIS ELEMENT";
+                    StyleBuilder.I3 = "DELETE THIS ELEMENT";
                     break;
                 case "MSBand_MetricsWithIcons":
                     StyleBuilder.SampleImage = new BitmapImage(new Uri("ms-appx:///Assets/ContentLayoutAssets/MetricsWithIconsImage.png"));
-                    StyleBuilder.E1 = "11";
-                    StyleBuilder.E2 = "12";
-                    StyleBuilder.E3 = "21";
-                    StyleBuilder.E4 = "22";
-                    StyleBuilder.E5 = "31";
-                    StyleBuilder.E6 = "32";
+                    StyleBuilder.E1 = "12";
+                    StyleBuilder.E2 = "22";
+                    StyleBuilder.E3 = "32";
+                    StyleBuilder.I1 = "11";
+                    StyleBuilder.I2 = "21";
+                    StyleBuilder.I3 = "31";
                     break;
                 case "MSBand_SingleMetricWithSecondary":
                     StyleBuilder.SampleImage = new BitmapImage(new Uri("ms-appx:///Assets/ContentLayoutAssets/SingleMetricWithSecondaryImage.png"));
-                    StyleBuilder.E1 = "11";
-                    StyleBuilder.E2 = "12";
-                    StyleBuilder.E3 = "21";
-                    StyleBuilder.E4 = "22";
-                    StyleBuilder.E5 = "DELETE THIS ELEMENT";
-                    StyleBuilder.E6 = "DELETE THIS ELEMENT";
+                    StyleBuilder.E1 = "12";
+                    StyleBuilder.E2 = "22";
+                    StyleBuilder.E3 = "32";
+                    StyleBuilder.I1 = "21";
+                    StyleBuilder.I2 = "DELETE THIS ELEMENT";
+                    StyleBuilder.I3 = "DELETE THIS ELEMENT";
                     break;
             }
             LayoutNext.IsEnabled = (prb_Selected == true) && (lrb_Selected == true);

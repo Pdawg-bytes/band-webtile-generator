@@ -21,6 +21,8 @@ using Windows.UI.Xaml.Media.Imaging;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Windows.Storage.Pickers;
+using Windows.UI.Xaml.Automation;
+using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -52,9 +54,10 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public static string E1;
         public static string E2;
         public static string E3;
-        public static string E4;
-        public static string E5;
-        public static string E6;
+        public static string I1;
+        public static string I2;
+        public static string I3;
+        public static int[] removeLines;
 
         private void StyleBack_Click(object sender, RoutedEventArgs e)
         {
@@ -175,22 +178,61 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                 },
                 refreshIntervalMinutes = RefreshInt,
                 resources = new dynamic[] {
-                new {
-                    url = ResourceURL,
-                    style = ResourceType,
-                    content = new
-                    {
-                        contentitem1 = "Add any variables that you need here",
-                        contentitem2 = "Add any variables that you need here",
-                        contentitem3 = "You can pull any of the data attributes from a selected data source!"
+                    new {
+                        url = ResourceURL,
+                        style = ResourceType,
+                        content = new
+                        {
+                            rsstitle = "title", // These are here by default, they aren't needed. Can be removed if wanted.
+                            rssdesc = "description", // These are here by default, they aren't needed. Can be removed if wanted.
+                            rsspubdate = "pubDate", // These are here by default, they aren't needed. Can be removed if wanted.
+                        },
                     },
-                  },
                 },
                 pages = new dynamic[]
                 {
                 new {
                     layout = PageType,
                     condition = "true",
+                    iconBindings = new dynamic[]
+                    {
+                        new
+                        {
+                            elementId = I1,
+                            conditions = new []
+                            {
+                                new
+                                {
+                                    condition = "true",
+                                    icon = "Type the icons name here"
+                                }
+                            },
+                        },
+                        new
+                        {
+                            elementId = I2,
+                            conditions = new []
+                            {
+                                new
+                                {
+                                    condition = "true",
+                                    icon = "Type the icons name here"
+                                }
+                            },
+                        },
+                        new
+                        {
+                            elementId = I3,
+                            conditions = new []
+                            {
+                                new
+                                {
+                                    condition = "true",
+                                    icon = "Type the icons name here"
+                                }
+                            },
+                        },
+                    },
                     textBindings = new []
                     {
                         new
@@ -207,22 +249,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                         {
                             elementId = E3,
                             value = "Variables defined in your resources are called like this: {{SomeDefinedVariable}}",
-                        },
-                        new
-                        {
-                            elementId = E4,
-                            value = "You may also set whatever text you want to be here.",
-                        },
-                        new
-                        {
-                            elementId = E5,
-                            value = "Variables defined in your resources are called like this: {{SomeDefinedVariable}}",
-                        },
-                        new
-                        {
-                            elementId = E6,
-                            value = "You may also set whatever text you want to be here.",
-                        },
+                        }
                     }
                 },       
                },
@@ -231,8 +258,26 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             var json = JsonConvert.SerializeObject(obj, Formatting.Indented);
             try
             {
-                StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
+                StorageFile manifestFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
                 await FileIO.WriteTextAsync(manifestFile, json);
+                string line = null;
+                int arrInc = 0;
+                int arrPull = removeLines[arrInc];
+                using (StreamReader reader = new StreamReader("C:\\input"))
+                {
+                    using (StreamWriter writer = new StreamWriter("C:\\output"))
+                    {
+                        while ((line = reader.ReadLine()) != null)
+                        {
+                            line_number++;
+
+                            if (line_number == arrPull)
+                                continue;
+
+                            writer.WriteLine(line);
+                        }
+                    }
+                }
             }
             catch
             {

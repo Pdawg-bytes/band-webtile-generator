@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel>
-            <TextBlock Text="Setting your text bindings" FontSize="50" Margin="15,15,0,0"/>
+            <TextBlock Text="Setting your resources" FontSize="50" Margin="15,15,0,0"/>
             
         </StackPanel>
     </Grid>
