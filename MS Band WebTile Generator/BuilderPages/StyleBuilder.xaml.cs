@@ -258,12 +258,13 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             };
 
             var json = JsonConvert.SerializeObject(obj, Formatting.Indented);
+
             try
             {
                 StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
                 await FileIO.WriteTextAsync(manifestFile, json);
                 List<string> lines;
-                lines = (List<string>)await FileIO.ReadLinesAsync(manifestFile);
+                lines = new List<string>(await FileIO.ReadLinesAsync(manifestFile));
                 lines.RemoveAt(2);
                 await FileIO.WriteLinesAsync(manifestFile, lines);
             }
