@@ -262,7 +262,8 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             {
                 StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
                 await FileIO.WriteTextAsync(manifestFile, json);
-                var lines = await FileIO.ReadLinesAsync(manifestFile);
+                List<string> lines;
+                lines = (List<string>)await FileIO.ReadLinesAsync(manifestFile);
                 lines.RemoveAt(2);
                 await FileIO.WriteLinesAsync(manifestFile, lines);
             }
