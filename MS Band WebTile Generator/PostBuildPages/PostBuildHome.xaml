@@ -9,9 +9,19 @@
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <Grid>
-        <StackPanel>
-            <TextBlock Text="Setting your resources" FontSize="50" Margin="15,15,0,0"/>
-            
-        </StackPanel>
+        <ScrollViewer HorizontalScrollMode="Disabled">
+            <StackPanel>
+                <TextBlock Text="Setting your resources" FontSize="50" Margin="15,15,0,30"/>
+                <TextBlock Text="Adding custom resources (not required)" FontSize="25" FontWeight="Medium" Margin="20,0,0,0"/>
+                <TextBlock Text="Let's start. In your manifest.json file (located in your Downloads Folder, in MS Band WebTile Generator), there are a few automatically generated resources. Look at lines 24-26. Those 3 lines are already generated for you. But if your RSS feed contains extra data that wouldn't normally be in an RSS feed (for example, weather data), you must add them yourself. To do this, add a new line below rssPubDate. Then, name the new attribute (example: 'weather.Seattle'), and then put a colon mark after that. Now, just open the RSS feed in a browser, look at the custom attribute, and then add it like this:" TextWrapping="WrapWholeWords" FontSize="15" Margin="20,10,20,20"/>
+                <Image Source="ms-appx:///Assets/DocsImages/resourcesScreenshot.png" Height="200" HorizontalAlignment="Left" Margin="20,0,20,0"/>
+                <TextBlock Text="Here is what new resources look like, and the explanation on how to add them." FontSize="20" Margin="20,0,0,30" TextWrapping="WrapWholeWords"/>
+                <TextBlock Text="Setting a second resource URL (not required)" FontSize="25" FontWeight="Medium" Margin="20,0,0,0"/>
+                <TextBlock Text="If you would like, you can add a second URL to your webtile. It's pretty easy, just mirror what you have above, and then change the URL. Heres how:" TextWrapping="WrapWholeWords" FontSize="15" Margin="20,10,20,20"/>
+                <Image Source="ms-appx:///Assets/DocsImages/resourcesURLScreenshot.png" Height="324" HorizontalAlignment="Left" Margin="20,0,20,0"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Button x:Name="ResourceBack" Content="Go back" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,180,30" Click="ResourceBack_Click"/>
+        <Button x:Name="ResourceNext" Content="Next" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,30" Background="{ThemeResource SystemAccentColor}" Click="ResourceNext_Click"/>
     </Grid>
 </Page>

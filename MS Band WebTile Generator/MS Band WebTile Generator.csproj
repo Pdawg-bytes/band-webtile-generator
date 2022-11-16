@@ -148,6 +148,12 @@
     <Compile Include="PostBuildPages\PostBuildHome.xaml.cs">
       <DependentUpon>PostBuildHome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PostBuildPages\PostBuildIconFalse.xaml.cs">
+      <DependentUpon>PostBuildIconFalse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PostBuildPages\PostBuildIconTrue.xaml.cs">
+      <DependentUpon>PostBuildIconTrue.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -165,6 +171,8 @@
     <Content Include="Assets\ContentLayoutAssets\SingleMetricImage.png" />
     <Content Include="Assets\ContentLayoutAssets\SingleMetricWithIconImage.png" />
     <Content Include="Assets\ContentLayoutAssets\SingleMetricWithSecondaryImage.png" />
+    <Content Include="Assets\DocsImages\resourcesScreenshot.png" />
+    <Content Include="Assets\DocsImages\resourcesURLScreenshot.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
@@ -258,6 +266,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PostBuildPages\PostBuildHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PostBuildPages\PostBuildIconFalse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PostBuildPages\PostBuildIconTrue.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

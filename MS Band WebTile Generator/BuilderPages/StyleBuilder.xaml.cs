@@ -23,6 +23,8 @@ using System.Text;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml.Automation;
 using Windows.UI.Xaml.Shapes;
+using static System.Net.WebRequestMethods;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -258,26 +260,11 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             var json = JsonConvert.SerializeObject(obj, Formatting.Indented);
             try
             {
-                StorageFile manifestFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
+                StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
                 await FileIO.WriteTextAsync(manifestFile, json);
-                string line = null;
-                int arrInc = 0;
-                int arrPull = removeLines[arrInc];
-                using (StreamReader reader = new StreamReader("C:\\input"))
-                {
-                    using (StreamWriter writer = new StreamWriter("C:\\output"))
-                    {
-                        while ((line = reader.ReadLine()) != null)
-                        {
-                            line_number++;
-
-                            if (line_number == arrPull)
-                                continue;
-
-                            writer.WriteLine(line);
-                        }
-                    }
-                }
+                var lines = await FileIO.ReadLinesAsync(manifestFile);
+                lines.RemoveAt(2);
+                await FileIO.WriteLinesAsync(manifestFile, lines);
             }
             catch
             {
