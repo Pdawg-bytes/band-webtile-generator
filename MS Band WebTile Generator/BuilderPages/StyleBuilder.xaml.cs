@@ -26,6 +26,7 @@ using Windows.UI.Xaml.Shapes;
 using static System.Net.WebRequestMethods;
 using System.Threading.Tasks;
 using MS_Band_WebTile_Generator.PostBuildPages;
+using Newtonsoft.Json.Serialization;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -76,34 +77,35 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         private void TitleTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TileTitle = TitleTextBox.Text;
-            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "") && (isFileComplete = true);
         }
 
         private void DescriptionBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             DescriptionTile = DescriptionBox.Text;
-            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "") && (isFileComplete = true);
         }
 
         private void AuthorBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             AuthorTile = AuthorBox.Text;
-            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "") && (isFileComplete = true);
         }
 
         private void OrgBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             OrgTile = OrgBox.Text;
-            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "") && (isFileComplete = true);
         }
 
         private void eBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TileEmail = eBox.Text;
-            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "");
+            StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "") && (isFileComplete = true);
         }
 
         int stradd = 0;
+        public static bool isFileComplete = false;
         public static string filename;
         private async void Browse46_Click(object sender, RoutedEventArgs e)
         {
@@ -126,12 +128,15 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                             break;
                         case 2:
                             filename = "badgeIcon.png";
+                            isFileComplete = true;
+                            stradd = 0;
                             break;
                     }
                     try
                     {
                         StorageFile copiedFile = await file.CopyAsync(subFolder);
                         await copiedFile.RenameAsync(filename);
+                        StyleNext.IsEnabled = (TitleTextBox.Text != "") && (DescriptionBox.Text != "") && (AuthorBox.Text != "") && (OrgBox.Text != "") && (eBox.Text != "") && (isFileComplete = true);
                     }
                     catch
                     {
@@ -157,7 +162,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
 
         private async void SerializeJSON()
         {
-            /*var model = new ObjectModel
+            var model = new ObjectModel
             {
                 ManifestVersion = 1,
                 Name = TileTitle,
@@ -171,12 +176,27 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                 {
                     [46] = "icons/tileIcon.png"
                 },
-                BadgeIcon = null,
+                BadgeIcon = new Dictionary<int, string>
+                {
+                    [24] = "icons/badgeIcon.png"
+                },
                 Icons = null,
-                RefreshIntervalMinutes = RefreshInt
-            };
-            var json = JsonConvert.SerializeObject(model, Formatting.Indented);
+                RefreshIntervalMinutes = RefreshInt,
+                Resources = new List<string>
+                {
 
+                }
+            };
+            DefaultContractResolver contractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy()
+            };
+
+            var json = JsonConvert.SerializeObject(model, Formatting.Indented, new JsonSerializerSettings
+            {
+                ContractResolver = contractResolver,
+                NullValueHandling = NullValueHandling.Ignore
+            });
             try
             {
                 StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
@@ -185,8 +205,8 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             catch
             {
                 ExceptionFileAccess.IsOpen = true;
-            }*/
-            var obj = new
+            }
+            /*var obj = new
             {
                 manifestVersion = 1,
                 name = TileTitle,
@@ -293,11 +313,14 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             {
                 StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
                 await FileIO.WriteTextAsync(manifestFile, json);
+                var lines = await FileIO.ReadLinesAsync(manifestFile);
+                lines.RemoveAt(2);
+                await FileIO.WriteLinesAsync(manifestFile, lines);
             }
             catch
             {
                 ExceptionFileAccess.IsOpen = true;
-            }
+            }*/
         }
     }
 }
