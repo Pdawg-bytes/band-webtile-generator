@@ -133,6 +133,7 @@
     <Compile Include="BuilderPages\LayoutBuilder.xaml.cs">
       <DependentUpon>LayoutBuilder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BuilderPages\ObjectModel.cs" />
     <Compile Include="BuilderPages\StyleBuilder.xaml.cs">
       <DependentUpon>StyleBuilder.xaml</DependentUpon>
     </Compile>

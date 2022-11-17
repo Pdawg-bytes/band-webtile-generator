@@ -25,6 +25,7 @@ using Windows.UI.Xaml.Automation;
 using Windows.UI.Xaml.Shapes;
 using static System.Net.WebRequestMethods;
 using System.Threading.Tasks;
+using MS_Band_WebTile_Generator.PostBuildPages;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -156,6 +157,35 @@ namespace MS_Band_WebTile_Generator.BuilderPages
 
         private async void SerializeJSON()
         {
+            /*var model = new ObjectModel
+            {
+                ManifestVersion = 1,
+                Name = TileTitle,
+                Description = DescriptionTile,
+                Version = 1,
+                VersionString = "1",
+                Author = AuthorTile,
+                Organization = OrgTile,
+                ContactEmail = TileEmail,
+                TileIcon = new Dictionary<int, string>
+                {
+                    [46] = "icons/tileIcon.png"
+                },
+                BadgeIcon = null,
+                Icons = null,
+                RefreshIntervalMinutes = RefreshInt
+            };
+            var json = JsonConvert.SerializeObject(model, Formatting.Indented);
+
+            try
+            {
+                StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
+                await FileIO.WriteTextAsync(manifestFile, json);
+            }
+            catch
+            {
+                ExceptionFileAccess.IsOpen = true;
+            }*/
             var obj = new
             {
                 manifestVersion = 1,
@@ -263,10 +293,6 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             {
                 StorageFile manifestFile = await DownloadsFolder.CreateFileAsync("manifest.json", CreationCollisionOption.GenerateUniqueName);
                 await FileIO.WriteTextAsync(manifestFile, json);
-                List<string> lines;
-                lines = new List<string>(await FileIO.ReadLinesAsync(manifestFile));
-                lines.RemoveAt(2);
-                await FileIO.WriteLinesAsync(manifestFile, lines);
             }
             catch
             {
