@@ -182,9 +182,13 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                 },
                 Icons = null,
                 RefreshIntervalMinutes = RefreshInt,
-                Resources = new List<string>
+                Resources = new List<WebTileResource>
                 {
-
+                    new WebTileResource
+                    {
+                        Url = ResourceURL,
+                        Style = ResourceType,
+                    }
                 }
             };
             DefaultContractResolver contractResolver = new DefaultContractResolver
