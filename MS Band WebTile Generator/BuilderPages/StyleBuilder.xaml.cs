@@ -188,6 +188,15 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     {
                         Url = ResourceURL,
                         Style = ResourceType,
+                        Content = new List<ContentList>
+                        {
+                            new ContentList
+                            {
+                                RssTitle = "title",
+                                RssDesc = "description",
+                                RssPubDate = "pubDate"
+                            }
+                        }
                     }
                 }
             };

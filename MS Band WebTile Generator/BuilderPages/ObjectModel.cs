@@ -28,6 +28,14 @@ namespace MS_Band_WebTile_Generator.PostBuildPages
     {
         public string Url { get; set; }
         public string Style { get; set; }
-        public Dictionary<string, string> Content { get; set; }
+        public string RssPubDate { get; set; }
+        public List<ContentList> Content { get; set; }
+    }
+
+    public class ContentList
+    {
+        public string RssTitle { get; set; }
+        public string RssDesc { get; set; }
+        public string RssPubDate { get; set; }
     }
 }
