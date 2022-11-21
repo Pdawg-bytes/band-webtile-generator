@@ -27,6 +27,7 @@ using static System.Net.WebRequestMethods;
 using System.Threading.Tasks;
 using MS_Band_WebTile_Generator.PostBuildPages;
 using Newtonsoft.Json.Serialization;
+using System.ServiceModel.Syndication;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -188,14 +189,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     {
                         Url = ResourceURL,
                         Style = ResourceType,
-                        Content = new List<ContentList>
+                        Content = new Dictionary<ContentList, string>
                         {
-                            new ContentList
-                            {
-                                RssTitle = "title",
-                                RssDesc = "description",
-                                RssPubDate = "pubDate"
-                            }
+                            RssTitle
                         }
                     }
                 }
