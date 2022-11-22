@@ -47,8 +47,7 @@ namespace MS_Band_WebTile_Generator.PostBuildPages
     }
     public class TextBinding
     {
-        public string ElementId1 { get; set; }
-        public string ElementId2 { get; set; }
-        public string ElementId3 { get; set; }
+        public string ElementId { get; set; }
+        public string Value { get; set; }
     }
 }

@@ -63,7 +63,10 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public static string I1;
         public static string I2;
         public static string I3;
-        public static int[] removeLines;
+        public static string EV1;
+        public static string EV2;
+        public static string EV3;
+        public static int[] PageCount;
 
         private void StyleBack_Click(object sender, RoutedEventArgs e)
         {
@@ -208,15 +211,18 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                         {
                             new TextBinding
                             {
-                                ElementId1 = E1
+                                ElementId = E1,
+                                Value = EV1
                             },
                             new TextBinding
                             {
-                                ElementId2 = E2
+                                ElementId = E2,
+                                Value = EV2
                             },
                             new TextBinding
                             {
-                                ElementId3 = E3
+                                ElementId = E3,
+                                Value = EV3
                             }
                         }
                     }
