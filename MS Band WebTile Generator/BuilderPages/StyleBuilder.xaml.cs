@@ -28,6 +28,7 @@ using System.Threading.Tasks;
 using MS_Band_WebTile_Generator.PostBuildPages;
 using Newtonsoft.Json.Serialization;
 using System.ServiceModel.Syndication;
+using System.Security.Cryptography.X509Certificates;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -191,11 +192,12 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                         Style = ResourceType,
                         Content = new Dictionary<ContentList, string>
                         {
-                            RssTitle
+                            
                         }
                     }
                 }
             };
+
             DefaultContractResolver contractResolver = new DefaultContractResolver
             {
                 NamingStrategy = new CamelCaseNamingStrategy()
