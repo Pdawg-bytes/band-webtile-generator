@@ -190,9 +190,34 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     {
                         Url = ResourceURL,
                         Style = ResourceType,
-                        Content = new Dictionary<ContentList, string>
+                        Content = new Dictionary<string, string>
                         {
-                            
+                            ["rssTitle"] = "title",
+                            ["rssDesc"] = "description",
+                            ["rssPubDate"] = "pubDate"
+                        }
+                    }
+                },
+                Pages = new List<PagesResource>
+                {
+                    new PagesResource
+                    {
+                        Layout = PageType,
+                        Condition = "true",
+                        TextBindings = new List<TextBinding>
+                        {
+                            new TextBinding
+                            {
+                                ElementId1 = E1
+                            },
+                            new TextBinding
+                            {
+                                ElementId2 = E2
+                            },
+                            new TextBinding
+                            {
+                                ElementId3 = E3
+                            }
                         }
                     }
                 }

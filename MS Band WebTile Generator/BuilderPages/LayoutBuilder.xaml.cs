@@ -58,10 +58,10 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.SampleImage = new BitmapImage(new Uri("ms-appx:///Assets/ContentLayoutAssets/ScrollingTextImage.png"));
                     StyleBuilder.E1 = "1";
                     StyleBuilder.E2 = "2";
-                    StyleBuilder.E3 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I1 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I2 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I3 = "DELETE THIS ELEMENT";
+                    StyleBuilder.E3 = null;
+                    StyleBuilder.I1 = null;
+                    StyleBuilder.I2 = null;
+                    StyleBuilder.I3 = null;
                     PostBuildPages.PostBuildHome.isRequired = false;
                     break;
                 case "MSBand_NoScrollingText":
@@ -69,29 +69,29 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.E1 = "1";
                     StyleBuilder.E2 = "2";
                     StyleBuilder.E3 = "3";
-                    StyleBuilder.I1 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I2 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I3 = "DELETE THIS ELEMENT";
+                    StyleBuilder.I1 = null;
+                    StyleBuilder.I2 = null;
+                    StyleBuilder.I3 = null;
                     PostBuildPages.PostBuildHome.isRequired = false;
                     break;
                 case "MSBand_SingleMetric":
                     StyleBuilder.SampleImage = new BitmapImage(new Uri("ms-appx:///Assets/ContentLayoutAssets/SingleMetricImage.png"));
                     StyleBuilder.E1 = "1";
                     StyleBuilder.E2 = "2";
-                    StyleBuilder.E3 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I1 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I2 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I3 = "DELETE THIS ELEMENT";
+                    StyleBuilder.E3 = null;
+                    StyleBuilder.I1 = null;
+                    StyleBuilder.I2 = null;
+                    StyleBuilder.I3 = null;
                     PostBuildPages.PostBuildHome.isRequired = false;
                     break;
                 case "MSBand_SingleMetricWithIcon":
                     StyleBuilder.SampleImage = new BitmapImage(new Uri("ms-appx:///Assets/ContentLayoutAssets/SingleMetricWithIconImage.png"));
                     StyleBuilder.E1 = "12";
                     StyleBuilder.E2 = "21";
-                    StyleBuilder.E3 = "DELETE THIS ELEMENT";
+                    StyleBuilder.E3 = null;
                     StyleBuilder.I1 = "11";
-                    StyleBuilder.I2 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I3 = "DELETE THIS ELEMENT";
+                    StyleBuilder.I2 = null;
+                    StyleBuilder.I3 = null;
                     PostBuildPages.PostBuildHome.isRequired = true;
                     break;
                 case "MSBand_MetricsWithIcons":
@@ -110,8 +110,8 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.E2 = "22";
                     StyleBuilder.E3 = "32";
                     StyleBuilder.I1 = "21";
-                    StyleBuilder.I2 = "DELETE THIS ELEMENT";
-                    StyleBuilder.I3 = "DELETE THIS ELEMENT";
+                    StyleBuilder.I2 = null;
+                    StyleBuilder.I3 = null;
                     PostBuildPages.PostBuildHome.isRequired = true;
                     break;
             }

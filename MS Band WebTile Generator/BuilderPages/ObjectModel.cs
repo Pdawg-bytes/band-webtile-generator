@@ -22,13 +22,13 @@ namespace MS_Band_WebTile_Generator.PostBuildPages
         public List<string> Icons { get; set; }
         public int RefreshIntervalMinutes { get; set; }
         public List<WebTileResource> Resources { get; set; }
-        public List<string> Pages { get; set; }
+        public List<PagesResource> Pages { get; set; }
     }
     public class WebTileResource
     {
         public string Url { get; set; }
         public string Style { get; set; }
-        public Dictionary<ContentList, string> Content { get; set; }
+        public Dictionary<string, string> Content { get; set; }
         public string RssTitle { get; set; }
     }
 
@@ -37,5 +37,18 @@ namespace MS_Band_WebTile_Generator.PostBuildPages
         public string RssTitle { get; set; }
         public string RssDesc { get; set; }
         public string RssPubDate { get; set; }
+    }
+
+    public class PagesResource
+    {
+        public string Layout { get; set; }
+        public string Condition { get; set; }
+        public List<TextBinding> TextBindings { get; set; }
+    }
+    public class TextBinding
+    {
+        public string ElementId1 { get; set; }
+        public string ElementId2 { get; set; }
+        public string ElementId3 { get; set; }
     }
 }
