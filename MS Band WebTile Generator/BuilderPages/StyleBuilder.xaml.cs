@@ -207,6 +207,45 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     {
                         Layout = PageType,
                         Condition = "true",
+                        IconBindings = new List<IconBinding>
+                        {
+                            new IconBinding
+                            {
+                                ElementId = I1,
+                                Conditions = new List<ConditionClass>
+                                {
+                                    new ConditionClass
+                                    {
+                                        Condition = "true",
+                                        Icon = I1
+                                    }
+                                }
+                            },
+                            new IconBinding
+                            {
+                                ElementId = I2,
+                                Conditions = new List<ConditionClass>
+                                {
+                                    new ConditionClass
+                                    {
+                                        Condition = "true",
+                                        Icon = I2
+                                    }
+                                }
+                            },
+                            new IconBinding
+                            {
+                                ElementId = I3,
+                                Conditions = new List<ConditionClass>
+                                {
+                                    new ConditionClass
+                                    {
+                                        Condition = "true",
+                                        Icon = I3
+                                    }
+                                }
+                            },
+                        },
                         TextBindings = new List<TextBinding>
                         {
                             new TextBinding

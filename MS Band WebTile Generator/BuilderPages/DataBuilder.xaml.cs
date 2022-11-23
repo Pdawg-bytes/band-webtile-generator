@@ -79,13 +79,20 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             {
                 DataNext.IsEnabled = true;
                 // Push parsed data
-                foreach (var element in feed.Items.Take(1))
+                try
                 {
-                    DataStatus.Text = "Data feed found.";
-                    DataStatus.Foreground = new SolidColorBrush(Colors.LightGreen);
-                    RSSTitle.Text = ($"Title: {element.Title.Text}");
-                    RSSDesc.Text = ($"Description: {element.Summary.Text}");
-                    RSSDate.Text = ($"Date and Time Published: {element.PublishDate}");
+                    foreach (var element in feed.Items.Take(1))
+                    {
+                        DataStatus.Text = "Data feed found.";
+                        DataStatus.Foreground = new SolidColorBrush(Colors.LightGreen);
+                        RSSTitle.Text = ($"Title: {element.Title.Text}");
+                        RSSDesc.Text = ($"Description: {element.Summary.Text}");
+                        RSSDate.Text = ($"Date and Time Published: {element.PublishDate}");
+                    }
+                }
+                catch
+                {
+                    XMLExceptionBar.IsOpen = true;
                 }
             }
         }

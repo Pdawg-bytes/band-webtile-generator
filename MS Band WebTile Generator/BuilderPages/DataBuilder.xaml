@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <Grid>
@@ -22,6 +23,7 @@
         </ScrollViewer>
         <Button x:Name="DataBack" Content="Go back" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,180,30" Click="DataBack_Click"/>
         <Button x:Name="DataNext" Content="Next" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,30" Background="{ThemeResource SystemAccentColor}" Click="DataNext_Click"/>
+        <muxc:InfoBar Severity="Error" Title="XML Exception" Message="XML Parser encountered an known error." IsOpen="False" VerticalAlignment="Bottom" Width="480" Margin="0,0,0,120" x:Name="XMLExceptionBar"/>
         <TextBlock Text="Here you see only one data feed link box. WebTiles support multiple data feeds, but it is standard to only use one. If you wish to add more, steps will be provided at the end of the creation process." HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="15" FontWeight="Thin" Margin="0,0,0,20" TextWrapping="WrapWholeWords" Width="400"/>
     </Grid>
 </Page>
