@@ -32,6 +32,12 @@
                     <x:String>RSS Publishing Date Binding</x:String>
                     <x:String>Other...</x:String>
                 </ComboBox>
+                <ComboBox x:Name="TextBinding3" Margin="20,15,0,0" Header="Text Binding 3" FontSize="18" SelectionChanged="TextBinding3_SelectionChanged">
+                    <x:String>RSS Title Binding</x:String>
+                    <x:String>RSS Description Binding</x:String>
+                    <x:String>RSS Publishing Date Binding</x:String>
+                    <x:String>Other...</x:String>
+                </ComboBox>
             </StackPanel>
         </ScrollViewer>
         <Button x:Name="DataBack" Content="Go back" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,180,30" Click="DataBack_Click"/>

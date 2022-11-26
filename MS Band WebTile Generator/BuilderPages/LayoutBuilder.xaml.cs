@@ -62,6 +62,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = null;
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    DataBuilder.TB1Enable = true;
+                    DataBuilder.TB2Enable = true;
+                    DataBuilder.TB3Enable = false;
                     PostBuildPages.PostBuildHome.isRequired = false;
                     break;
                 case "MSBand_NoScrollingText":
@@ -72,6 +75,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = null;
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    DataBuilder.TB1Enable = true;
+                    DataBuilder.TB2Enable = true;
+                    DataBuilder.TB3Enable = true;
                     PostBuildPages.PostBuildHome.isRequired = false;
                     break;
                 case "MSBand_SingleMetric":
@@ -82,6 +88,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = null;
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    DataBuilder.TB1Enable = true;
+                    DataBuilder.TB2Enable = true;
+                    DataBuilder.TB3Enable = false;
                     PostBuildPages.PostBuildHome.isRequired = false;
                     break;
                 case "MSBand_SingleMetricWithIcon":
@@ -92,6 +101,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = "11";
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    DataBuilder.TB1Enable = true;
+                    DataBuilder.TB2Enable = true;
+                    DataBuilder.TB3Enable = false;
                     PostBuildPages.PostBuildHome.isRequired = true;
                     break;
                 case "MSBand_MetricsWithIcons":
@@ -102,6 +114,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = "11";
                     StyleBuilder.I2 = "21";
                     StyleBuilder.I3 = "31";
+                    DataBuilder.TB1Enable = true;
+                    DataBuilder.TB2Enable = true;
+                    DataBuilder.TB3Enable = true;
                     PostBuildPages.PostBuildHome.isRequired = true;
                     break;
                 case "MSBand_SingleMetricWithSecondary":
@@ -112,6 +127,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = "21";
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    DataBuilder.TB1Enable = true;
+                    DataBuilder.TB2Enable = true;
+                    DataBuilder.TB3Enable = true;
                     PostBuildPages.PostBuildHome.isRequired = true;
                     break;
             }

@@ -30,6 +30,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             this.InitializeComponent();
             SetButton.IsEnabled = false;
             BindingValue.Text = "";
+            DataBuilder.OtherString = "";
         }
 
         private void SetButton_Click(object sender, RoutedEventArgs e)

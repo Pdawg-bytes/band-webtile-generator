@@ -30,14 +30,24 @@ namespace MS_Band_WebTile_Generator.BuilderPages
     /// </summary>
     public sealed partial class DataBuilder : Page
     {
+
+        public static string OtherString;
+        public static bool TB1Enable;
+        public static bool TB2Enable;
+        public static bool TB3Enable;
+
         public DataBuilder()
         {
             this.InitializeComponent();
             DataNext.IsEnabled = false;
+            TextBinding1.IsEnabled = TB1Enable;
+            TextBinding2.IsEnabled = TB2Enable;
+            TextBinding3.IsEnabled = TB3Enable;
+            StyleBuilder.EV1 = null;
+            StyleBuilder.EV2 = null;
+            StyleBuilder.EV3 = null;
         }
 
-        private static bool ButtonEnable;
-        public static string OtherString;
         private void DataBack_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MS_Band_WebTile_Generator.BuilderPages.LayoutBuilder), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromLeft });
@@ -74,7 +84,6 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             {
                 feed = null;
                 DataNext.IsEnabled = false;
-                ButtonEnable = false;
                 DataStatus.Text = "Data feed unavailable, please try again later.";
                 DataStatus.Foreground = new SolidColorBrush(Colors.Red);
             }
@@ -82,7 +91,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             if (feed != null)
             {
                 // Push parsed data
-                ButtonEnable = true;
+                DataNext.IsEnabled = true;
                 try
                 {
                     foreach (var element in feed.Items.Take(1))
@@ -103,32 +112,39 @@ namespace MS_Band_WebTile_Generator.BuilderPages
 
         private async void TextBinding1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string TextBind1String = e.AddedItems[0].ToString();
-            switch (TextBind1String)
+            if (TB1Enable == true)
             {
-                case "RSS Title Binding":
-                default:
-                    StyleBuilder.EV1 = "{{title}}";
-                    break;
-                case "RSS Description Binding":
-                    StyleBuilder.EV1 = "{{description}}";
-                    break;
-                case "RSS Publishing Date Binding":
-                    StyleBuilder.EV1 = "{{pubDate}}";
-                    break;
-                case "Other...":
-                    OtherBindingDialog dialog = new OtherBindingDialog();
-                    await dialog.ShowAsync();
+                string TextBind1String = e.AddedItems[0].ToString();
+                switch (TextBind1String)
+                {
+                    case "RSS Title Binding":
+                    default:
+                        StyleBuilder.EV1 = "{{rssTitle}}";
+                        break;
+                    case "RSS Description Binding":
+                        StyleBuilder.EV1 = "{{rssDesc}}";
+                        break;
+                    case "RSS Publishing Date Binding":
+                        StyleBuilder.EV1 = "{{rssPubDate}}";
+                        break;
+                    case "Other...":
+                        OtherBindingDialog dialog = new OtherBindingDialog();
+                        await dialog.ShowAsync();
 
-                    if (dialog.Result == TextResult.Set)
-                    {
-                        StyleBuilder.EV1 = OtherString;
-                    }
-                    else if (dialog.Result == TextResult.Cancel)
-                    {
-                        // Do nothing
-                    }
-                    break;
+                        if (dialog.Result == TextResult.Set)
+                        {
+                            StyleBuilder.EV1 = OtherString;
+                        }
+                        else if (dialog.Result == TextResult.Cancel)
+                        {
+                            // Do nothing
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                // Do nothing
             }
         }
 
@@ -158,7 +174,37 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     else if (dialog.Result == TextResult.Cancel)
                     {
                         // Do nothing
-                        // SELF REMINDER: FIX THE CODE SO THAT IT WILL NULL THE PROPERTY WHEN NEEDED!
+                    }
+                    break;
+            }
+        }
+
+        private async void TextBinding3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string TextBind3String = e.AddedItems[0].ToString();
+            switch (TextBind3String)
+            {
+                case "RSS Title Binding":
+                default:
+                    StyleBuilder.EV3 = "{{title}}";
+                    break;
+                case "RSS Description Binding":
+                    StyleBuilder.EV3 = "{{description}}";
+                    break;
+                case "RSS Publishing Date Binding":
+                    StyleBuilder.EV3 = "{{pubDate}}";
+                    break;
+                case "Other...":
+                    OtherBindingDialog dialog = new OtherBindingDialog();
+                    await dialog.ShowAsync();
+
+                    if (dialog.Result == TextResult.Set)
+                    {
+                        StyleBuilder.EV3 = OtherString;
+                    }
+                    else if (dialog.Result == TextResult.Cancel)
+                    {
+                        // Do nothing
                     }
                     break;
             }
