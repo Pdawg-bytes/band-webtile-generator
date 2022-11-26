@@ -17,8 +17,21 @@
                 <TextBox Header="Data feed link" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="20" FontWeight="Medium" x:Name="DataFeedBox" TextChanged="DataFeedBox_TextChanged"/>
                 <TextBlock x:Name="DataStatus" Margin="20,10,0,0"/>
                 <TextBlock Text="Title:" Margin="20,10,0,0" x:Name="RSSTitle" TextWrapping="WrapWholeWords"/>
-                <TextBlock Text="Description:" Margin="20,10,0,0" x:Name="RSSDesc" TextWrapping="WrapWholeWords" Width="500" HorizontalAlignment="Left"/>
+                <TextBlock Text="Description:" Margin="20,10,0,0" x:Name="RSSDesc" TextWrapping="WrapWholeWords" Width="500" HorizontalAlignment="Left" FontSize="15"/>
                 <TextBlock Text="Date and Time Published:" Margin="20,10,0,0" x:Name="RSSDate" TextWrapping="WrapWholeWords"/>
+                <TextBlock Text="Set your text bindings" FontSize="40" FontWeight="Medium" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="WrapWholeWords"/>
+                <ComboBox x:Name="TextBinding1" Margin="20,15,0,0" Header="Text Binding 1" SelectionChanged="TextBinding1_SelectionChanged" FontSize="18">
+                    <x:String>RSS Title Binding</x:String>
+                    <x:String>RSS Description Binding</x:String>
+                    <x:String>RSS Publishing Date Binding</x:String>
+                    <x:String>Other...</x:String>
+                </ComboBox>
+                <ComboBox x:Name="TextBinding2" Margin="20,15,0,0" Header="Text Binding 2" SelectionChanged="TextBinding2_SelectionChanged" FontSize="18">
+                    <x:String>RSS Title Binding</x:String>
+                    <x:String>RSS Description Binding</x:String>
+                    <x:String>RSS Publishing Date Binding</x:String>
+                    <x:String>Other...</x:String>
+                </ComboBox>
             </StackPanel>
         </ScrollViewer>
         <Button x:Name="DataBack" Content="Go back" Height="40" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,180,30" Click="DataBack_Click"/>

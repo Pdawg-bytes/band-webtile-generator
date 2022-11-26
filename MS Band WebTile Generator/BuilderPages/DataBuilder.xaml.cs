@@ -36,6 +36,8 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             DataNext.IsEnabled = false;
         }
 
+        private static bool ButtonEnable;
+        public static string OtherString;
         private void DataBack_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MS_Band_WebTile_Generator.BuilderPages.LayoutBuilder), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromLeft });
@@ -68,17 +70,19 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                 }
             }
             // Handle bad resource
-            catch { 
+            catch
+            {
                 feed = null;
                 DataNext.IsEnabled = false;
+                ButtonEnable = false;
                 DataStatus.Text = "Data feed unavailable, please try again later.";
                 DataStatus.Foreground = new SolidColorBrush(Colors.Red);
             }
 
             if (feed != null)
             {
-                DataNext.IsEnabled = true;
                 // Push parsed data
+                ButtonEnable = true;
                 try
                 {
                     foreach (var element in feed.Items.Take(1))
@@ -94,6 +98,69 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                 {
                     XMLExceptionBar.IsOpen = true;
                 }
+            }
+        }
+
+        private async void TextBinding1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string TextBind1String = e.AddedItems[0].ToString();
+            switch (TextBind1String)
+            {
+                case "RSS Title Binding":
+                default:
+                    StyleBuilder.EV1 = "{{title}}";
+                    break;
+                case "RSS Description Binding":
+                    StyleBuilder.EV1 = "{{description}}";
+                    break;
+                case "RSS Publishing Date Binding":
+                    StyleBuilder.EV1 = "{{pubDate}}";
+                    break;
+                case "Other...":
+                    OtherBindingDialog dialog = new OtherBindingDialog();
+                    await dialog.ShowAsync();
+
+                    if (dialog.Result == TextResult.Set)
+                    {
+                        StyleBuilder.EV1 = OtherString;
+                    }
+                    else if (dialog.Result == TextResult.Cancel)
+                    {
+                        // Do nothing
+                    }
+                    break;
+            }
+        }
+
+        private async void TextBinding2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string TextBind2String = e.AddedItems[0].ToString();
+            switch (TextBind2String)
+            {
+                case "RSS Title Binding":
+                default:
+                    StyleBuilder.EV2 = "{{title}}";
+                    break;
+                case "RSS Description Binding":
+                    StyleBuilder.EV2 = "{{description}}";
+                    break;
+                case "RSS Publishing Date Binding":
+                    StyleBuilder.EV2 = "{{pubDate}}";
+                    break;
+                case "Other...":
+                    OtherBindingDialog dialog = new OtherBindingDialog();
+                    await dialog.ShowAsync();
+
+                    if (dialog.Result == TextResult.Set)
+                    {
+                        StyleBuilder.EV2 = OtherString;
+                    }
+                    else if (dialog.Result == TextResult.Cancel)
+                    {
+                        // Do nothing
+                        // SELF REMINDER: FIX THE CODE SO THAT IT WILL NULL THE PROPERTY WHEN NEEDED!
+                    }
+                    break;
             }
         }
     }

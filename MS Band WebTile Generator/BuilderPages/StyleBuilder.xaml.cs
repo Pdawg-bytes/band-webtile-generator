@@ -66,6 +66,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public static string EV1;
         public static string EV2;
         public static string EV3;
+        public static bool IsIconBinding;
         public static int[] PageCount;
 
         private void StyleBack_Click(object sender, RoutedEventArgs e)
