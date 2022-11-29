@@ -18,6 +18,7 @@ Installing this app is quite simple. You need to first install the certificate i
 # Screenshots
 ![image](https://user-images.githubusercontent.com/83825746/204412843-d0d4ee99-dde7-45ef-a64a-617b33f83f70.png)
 ![image](https://user-images.githubusercontent.com/83825746/204413215-4b4dbf6b-8771-4079-b383-6388c76ca765.png)
-![image](https://user-images.githubusercontent.com/83825746/204413335-570c3f88-378a-41a2-88aa-d8711a2994b8.png)
 ![image](https://user-images.githubusercontent.com/83825746/204413779-d1434ff7-3a55-4479-9b01-f7fc1dd5e25b.png)
+![image](https://user-images.githubusercontent.com/83825746/204413920-923d39c8-6c26-41c3-b7a8-ca77e2cb29dd.png)
+
 
