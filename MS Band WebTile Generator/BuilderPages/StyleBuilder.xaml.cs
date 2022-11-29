@@ -66,6 +66,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public static string EV1;
         public static string EV2;
         public static string EV3;
+        public static string IN1;
+        public static string IN2;
+        public static string IN3;
         public static bool IsIconBinding;
         public static int[] PageCount;
 
@@ -186,7 +189,10 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                 {
                     [24] = "icons/badgeIcon.png"
                 },
-                Icons = null,
+                Icons = new Dictionary<string, string>
+                {
+                    ["iconTest"] = "newIcon1.png"
+                },
                 RefreshIntervalMinutes = RefreshInt,
                 Resources = new List<WebTileResource>
                 {
@@ -217,7 +223,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                                 {
                                     new ConditionClass
                                     {
-                                        Condition = "true",
+                                        Condition = IN1,
                                         Icon = I1
                                     }
                                 }
@@ -229,7 +235,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                                 {
                                     new ConditionClass
                                     {
-                                        Condition = "true",
+                                        Condition = IN2,
                                         Icon = I2
                                     }
                                 }
@@ -241,7 +247,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                                 {
                                     new ConditionClass
                                     {
-                                        Condition = "true",
+                                        Condition = IN3,
                                         Icon = I3
                                     }
                                 }

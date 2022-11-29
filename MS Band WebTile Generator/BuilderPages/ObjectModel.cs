@@ -19,7 +19,7 @@ namespace MS_Band_WebTile_Generator.PostBuildPages
         public string ContactEmail { get; set; }
         public Dictionary<int, string> TileIcon { get; set; }
         public Dictionary<int, string> BadgeIcon { get; set; }
-        public List<string> Icons { get; set; }
+        public Dictionary<string, string> Icons { get; set; }
         public int RefreshIntervalMinutes { get; set; }
         public List<WebTileResource> Resources { get; set; }
         public List<PagesResource> Pages { get; set; }

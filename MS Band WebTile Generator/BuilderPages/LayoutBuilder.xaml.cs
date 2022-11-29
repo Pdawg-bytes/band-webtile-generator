@@ -62,6 +62,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = null;
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    StyleBuilder.IN1 = null;
+                    StyleBuilder.IN2 = null;
+                    StyleBuilder.IN3 = null;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = false;
@@ -75,6 +78,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = null;
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    StyleBuilder.IN1 = null;
+                    StyleBuilder.IN2 = null;
+                    StyleBuilder.IN3 = null;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = true;
@@ -88,6 +94,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = null;
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    StyleBuilder.IN1 = null;
+                    StyleBuilder.IN2 = null;
+                    StyleBuilder.IN3 = null;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = false;
@@ -101,6 +110,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = "11";
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    StyleBuilder.IN1 = "true";
+                    StyleBuilder.IN2 = null;
+                    StyleBuilder.IN3 = null;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = false;
@@ -114,6 +126,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = "11";
                     StyleBuilder.I2 = "21";
                     StyleBuilder.I3 = "31";
+                    StyleBuilder.IN1 = "true";
+                    StyleBuilder.IN2 = "true";
+                    StyleBuilder.IN3 = "true";
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = true;
@@ -127,6 +142,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.I1 = "21";
                     StyleBuilder.I2 = null;
                     StyleBuilder.I3 = null;
+                    StyleBuilder.IN1 = "true";
+                    StyleBuilder.IN2 = null;
+                    StyleBuilder.IN3 = null;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = true;
@@ -143,25 +161,13 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             if (lrb.Name == "Simple")
             {
                 StyleBuilder.ResourceType = "Simple";
-                MSBand_SingleMetric.IsEnabled = true;
-                MSBand_MetricsWithIcons.IsEnabled = true;
-                MSBand_SingleMetricWithIcon.IsEnabled = true;
-                MSBand_SingleMetricWithSecondary.IsEnabled = true;
             }
             else if (lrb.Name == "Simple2")
             {
                 StyleBuilder.ResourceType = "Simple";
-                MSBand_SingleMetric.IsEnabled = true;
-                MSBand_MetricsWithIcons.IsEnabled = true;
-                MSBand_SingleMetricWithIcon.IsEnabled = true;
-                MSBand_SingleMetricWithSecondary.IsEnabled = true;
             }
             else
             {
-                MSBand_SingleMetric.IsEnabled = false;
-                MSBand_MetricsWithIcons.IsEnabled = false;
-                MSBand_SingleMetricWithIcon.IsEnabled = false;
-                MSBand_SingleMetricWithSecondary.IsEnabled = false;
                 StyleBuilder.ResourceType = "Feed";
             }
             LayoutNext.IsEnabled = (prb_Selected == true) && (lrb_Selected == true);

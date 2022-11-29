@@ -9,7 +9,8 @@
     x:Name="BindingDialog"
     d:DesignHeight="300"
     d:DesignWidth="400"
-    CornerRadius="6">
+    CornerRadius="6"
+    Background="{ThemeResource ElementAcrylicBrush}">
 
     <Grid>
         <TextBlock Text="Set a custom value" FontSize="15" FontWeight="Medium"/>

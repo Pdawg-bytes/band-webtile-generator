@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
-    <Grid>
+    <Grid Background="{ThemeResource ElementAcrylicBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="48" />
             <RowDefinition Height="*" />
@@ -17,7 +17,7 @@
         <Image Source="ms-appx:///Assets/webtile_gen_icon.png"/>
         <TextBlock Text="Microsoft Band WebTile Generator" FontSize="16" Margin="10,10,0,0"/>
         <Frame Grid.Row="1" x:Name="stepsframe"/>
-        <muxc:NavigationView x:Name="stepnavview" Grid.Row="1" IsBackEnabled="False" IsBackButtonVisible="Collapsed" ItemInvoked="stepnavview_ItemInvoked" Background="{ThemeResource ElementAcrylicBrush}">
+        <muxc:NavigationView x:Name="stepnavview" Grid.Row="1" IsBackEnabled="False" IsBackButtonVisible="Collapsed" ItemInvoked="stepnavview_ItemInvoked">
             <muxc:NavigationView.MenuItems>
                 <muxc:NavigationViewItem  Content="Home" x:Name="Home" Icon="Home"/>
                 <muxc:NavigationViewItemSeparator/>
