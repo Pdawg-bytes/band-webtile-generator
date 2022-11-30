@@ -18,6 +18,8 @@
                     <RadioButton x:Name="Simple" GroupName="PageTypeGroup" Content="Single-page tile" Checked="HandleResourceTypeCheck"/>
                     <RadioButton x:Name="Simple2" GroupName="PageTypeGroup" Content="Multiple-page tile" Checked="HandleResourceTypeCheck"/>
                     <RadioButton x:Name="Feed" GroupName="PageTypeGroup" Content="Feed tile" Checked="HandleResourceTypeCheck"/>
+                    <ToggleSwitch x:Name="BadgeIconCheck" Header="Use badge icon in tile" Toggled="BadgeIconCheck_Toggled"/>
+                    <ToggleSwitch x:Name="IncludeCustomIconCheck" Header="Use custom icons in tile" Toggled="IncludeCustomIconCheck_Toggled"/>
                 </StackPanel>
                 <TextBlock Text="Content layouts" FontSize="20" Margin="20,0,0,0"/>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,10,0,20">

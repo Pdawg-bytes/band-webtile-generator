@@ -45,6 +45,8 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             RefreshInt = 15;
             RefreshSlider.Value = 15;
             StyleNext.IsEnabled = false;
+            IsBadgeIcon = false;
+            IsCustomIcon = false;
         }
 
         public static string ResourceType;
@@ -69,7 +71,8 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public static string IN1;
         public static string IN2;
         public static string IN3;
-        public static bool IsIconBinding;
+        public static bool IsBadgeIcon;
+        public static bool IsCustomIcon;
         public static int[] PageCount;
 
         private void StyleBack_Click(object sender, RoutedEventArgs e)
@@ -191,7 +194,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                 },
                 Icons = new Dictionary<string, string>
                 {
-                    ["iconTest"] = "newIcon1.png"
+                    ["SampleIcon"] = "icons/SampleIcon.png"
                 },
                 RefreshIntervalMinutes = RefreshInt,
                 Resources = new List<WebTileResource>
@@ -274,6 +277,29 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     }
                 }
             };
+            
+            if (IsBadgeIcon == false)
+            {
+                model.BadgeIcon = null;
+            }
+            else
+            {
+                model.BadgeIcon = new Dictionary<int, string>
+                {
+                    [24] = "icons/badgeIcon.png"
+                };
+            }
+            if (IsCustomIcon == false)
+            {
+                model.Icons = null;
+            }
+            else
+            {
+                model.Icons = new Dictionary<string, string>
+                {
+                    ["SampleIcon"] = "icons/SampleIcon.png"
+                };
+            }
 
             DefaultContractResolver contractResolver = new DefaultContractResolver
             {

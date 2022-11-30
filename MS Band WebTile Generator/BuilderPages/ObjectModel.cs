@@ -34,8 +34,8 @@ namespace MS_Band_WebTile_Generator.PostBuildPages
     {
         public string Layout { get; set; }
         public string Condition { get; set; }
-        public List<TextBinding> TextBindings { get; set; }
         public List<IconBinding> IconBindings { get; set; }
+        public List<TextBinding> TextBindings { get; set; }
     }
     public class IconBinding
     {

@@ -172,5 +172,37 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             }
             LayoutNext.IsEnabled = (prb_Selected == true) && (lrb_Selected == true);
         }
+
+        private void IncludeCustomIconCheck_Toggled(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch CustomToggleSwitch = sender as ToggleSwitch;
+            if (CustomToggleSwitch != null)
+            {
+                if (CustomToggleSwitch.IsOn == true)
+                {
+                    StyleBuilder.IsCustomIcon = true;
+                }
+                else
+                {
+                    StyleBuilder.IsCustomIcon = false;
+                }
+            }
+        }
+
+        private void BadgeIconCheck_Toggled(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch BadgeToggleSwitch = sender as ToggleSwitch;
+            if (BadgeToggleSwitch != null)
+            {
+                if (BadgeToggleSwitch.IsOn == true)
+                {
+                    StyleBuilder.IsBadgeIcon = true;
+                }
+                else
+                {
+                    StyleBuilder.IsBadgeIcon = false;
+                }
+            }
+        }
     }
 }
