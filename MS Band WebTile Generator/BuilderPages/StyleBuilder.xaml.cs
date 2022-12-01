@@ -303,6 +303,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             }
             if (IsIconBinding == false)
             {
+                
             }
 
             DefaultContractResolver contractResolver = new DefaultContractResolver
