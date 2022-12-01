@@ -65,6 +65,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.IN1 = null;
                     StyleBuilder.IN2 = null;
                     StyleBuilder.IN3 = null;
+                    StyleBuilder.IsIconBinding = false;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = false;
@@ -81,6 +82,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.IN1 = null;
                     StyleBuilder.IN2 = null;
                     StyleBuilder.IN3 = null;
+                    StyleBuilder.IsIconBinding = false;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = true;
@@ -97,6 +99,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.IN1 = null;
                     StyleBuilder.IN2 = null;
                     StyleBuilder.IN3 = null;
+                    StyleBuilder.IsIconBinding = false;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = false;
@@ -113,6 +116,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.IN1 = "true";
                     StyleBuilder.IN2 = null;
                     StyleBuilder.IN3 = null;
+                    StyleBuilder.IsIconBinding = true;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = false;
@@ -129,6 +133,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.IN1 = "true";
                     StyleBuilder.IN2 = "true";
                     StyleBuilder.IN3 = "true";
+                    StyleBuilder.IsIconBinding = true;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = true;
@@ -145,6 +150,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     StyleBuilder.IN1 = "true";
                     StyleBuilder.IN2 = null;
                     StyleBuilder.IN3 = null;
+                    StyleBuilder.IsIconBinding = true;
                     DataBuilder.TB1Enable = true;
                     DataBuilder.TB2Enable = true;
                     DataBuilder.TB3Enable = true;

@@ -73,6 +73,7 @@ namespace MS_Band_WebTile_Generator.BuilderPages
         public static string IN3;
         public static bool IsBadgeIcon;
         public static bool IsCustomIcon;
+        public static bool IsIconBinding;
         public static int[] PageCount;
 
         private void StyleBack_Click(object sender, RoutedEventArgs e)
@@ -299,6 +300,9 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                 {
                     ["SampleIcon"] = "icons/SampleIcon.png"
                 };
+            }
+            if (IsIconBinding == false)
+            {
             }
 
             DefaultContractResolver contractResolver = new DefaultContractResolver
