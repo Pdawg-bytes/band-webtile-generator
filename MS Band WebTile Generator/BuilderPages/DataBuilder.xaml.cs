@@ -68,7 +68,6 @@ namespace MS_Band_WebTile_Generator.BuilderPages
 
         public void ParseRSS()
         {
-            // Set defualt
             SyndicationFeed feed = null;
 
             // Try and read RSS/ATOM Feed
@@ -135,16 +134,8 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                         {
                             StyleBuilder.EV1 = OtherString;
                         }
-                        else if (dialog.Result == TextResult.Cancel)
-                        {
-                            // Do nothing
-                        }
                         break;
                 }
-            }
-            else
-            {
-                // Do nothing
             }
         }
 
@@ -170,10 +161,6 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     if (dialog.Result == TextResult.Set)
                     {
                         StyleBuilder.EV2 = OtherString;
-                    }
-                    else if (dialog.Result == TextResult.Cancel)
-                    {
-                        // Do nothing
                     }
                     break;
             }
@@ -201,10 +188,6 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                     if (dialog.Result == TextResult.Set)
                     {
                         StyleBuilder.EV3 = OtherString;
-                    }
-                    else if (dialog.Result == TextResult.Cancel)
-                    {
-                        // Do nothing
                     }
                     break;
             }

@@ -276,6 +276,15 @@ namespace MS_Band_WebTile_Generator.BuilderPages
                             }
                         }
                     }
+                },
+                Notifications = new List<NotificationsResource>
+                {
+                    new NotificationsResource
+                    {
+                        Condition = "test for now...",
+                        Title = "just testing!",
+                        Body = "more testing."
+                    }
                 }
             };
             
@@ -303,7 +312,11 @@ namespace MS_Band_WebTile_Generator.BuilderPages
             }
             if (IsIconBinding == false)
             {
-                
+                var pageFirst = model.Pages.FirstOrDefault(p => p.Layout == PageType);
+                if (pageFirst != null)
+                {
+                    pageFirst.IconBindings = null;
+                }
             }
 
             DefaultContractResolver contractResolver = new DefaultContractResolver

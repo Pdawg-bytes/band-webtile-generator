@@ -10,7 +10,7 @@
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <Grid>
-        <ScrollViewer x:Name="DataScrollViewer">
+        <ScrollViewer x:Name="DataScrollViewer" Margin="0,0,0,20">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Choose your data sources" FontSize="40" FontWeight="Medium" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="WrapWholeWords"/>
                 <TextBlock Text="Here is were you assign dynamic RSS or ATOM data to your WebTile. The feed will be parsed into these boxes which will then allow you to see some of the data that your selected feed is producing. If there is custom data that is not listed here, there will be ways to add it in the post creation steps." TextWrapping="WrapWholeWords" FontSize="15" Margin="20,20,20,20"/>

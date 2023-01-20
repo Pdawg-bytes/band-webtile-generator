@@ -23,6 +23,7 @@ namespace MS_Band_WebTile_Generator.PostBuildPages
         public int RefreshIntervalMinutes { get; set; }
         public List<WebTileResource> Resources { get; set; }
         public List<PagesResource> Pages { get; set; }
+        public List <NotificationsResource> Notifications { get; set; }
     }
     public class WebTileResource
     {
@@ -52,5 +53,12 @@ namespace MS_Band_WebTile_Generator.PostBuildPages
     {
         public string ElementId { get; set; }
         public string Value { get; set; }
+    }
+
+    public class NotificationsResource
+    {
+        public string Condition { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
     }
 }
