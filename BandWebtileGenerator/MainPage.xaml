@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="BandWebtileGenerator.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BandWebtileGenerator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="AppTitleBar" Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
+                <ColumnDefinition/>
+                <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="Assets/StoreLogo.png" 
+           Grid.Column="1"
+           HorizontalAlignment="Left"
+           Width="16" Height="16"
+           Margin="16,0,0,0"/>
+            <TextBlock x:Name="AppTitleTextBlock"
+               Text="Band Webtile Generator" 
+               Style="{StaticResource CaptionTextBlockStyle}" 
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Margin="48,0,0,2"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <muxc:NavigationView x:Name="RootNavView" ItemInvoked="RootNavView_ItemInvoked" IsBackEnabled="False" IsBackButtonVisible="Collapsed">
+                <muxc:NavigationView.MenuItems>
+                    <muxc:NavigationViewItem Content="Home" Icon="Home" Tag="HomeView" x:Name="HomeNavItem"/>
+                </muxc:NavigationView.MenuItems>
+                <Frame x:Name="ContentFrame"/>
+            </muxc:NavigationView>
+        </Grid>
+    </Grid>
+</Page>
