@@ -126,6 +126,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Environment\EnvironmentService.cs" />
+    <Compile Include="Views\BuilderHomeView.xaml.cs">
+      <DependentUpon>BuilderHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BuilderLayoutView.xaml.cs">
+      <DependentUpon>BuilderLayoutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
@@ -156,6 +162,14 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BuilderHomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuilderLayoutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HomeView.xaml">
       <SubType>Designer</SubType>

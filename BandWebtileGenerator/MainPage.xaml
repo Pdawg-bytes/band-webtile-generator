@@ -36,6 +36,11 @@
             <muxc:NavigationView x:Name="RootNavView" ItemInvoked="RootNavView_ItemInvoked" IsBackEnabled="False" IsBackButtonVisible="Collapsed">
                 <muxc:NavigationView.MenuItems>
                     <muxc:NavigationViewItem Content="Home" Icon="Home" Tag="HomeView" x:Name="HomeNavItem"/>
+                    <muxc:NavigationViewItem Content="WebTile Builder" Tag="BuilderHomeView">
+                        <muxc:NavigationViewItem.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEC7A;"/>
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
                 </muxc:NavigationView.MenuItems>
                 <Frame x:Name="ContentFrame"/>
             </muxc:NavigationView>

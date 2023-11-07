@@ -14,7 +14,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
-
 using Microsoft.Extensions.DependencyInjection;
 using BandWebtileGenerator.Library.ViewModels;
 using BandWebtileGenerator.Views;
@@ -61,6 +60,9 @@ namespace BandWebtileGenerator
                     break;
                 case "HomeView":
                     ContentFrame.Navigate(typeof(HomeView), null, new SlideNavigationTransitionInfo());
+                    break;
+                case "BuilderHomeView":
+                    ContentFrame.Navigate(typeof(BuilderHomeView), null, new SlideNavigationTransitionInfo());
                     break;
             }
         }

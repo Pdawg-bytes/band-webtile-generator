@@ -26,7 +26,8 @@ namespace BandWebtileGenerator
             IServiceCollection collection = new ServiceCollection()
                 .AddSingleton<IEnvironmentService, EnvironmentService>()
                 .AddTransient<HomeViewModel>()
-                .AddTransient<MainPageViewModel>();
+                .AddTransient<MainPageViewModel>()
+                .AddTransient<BuilderHomeViewModel>();
 
             m_serviceProvider = collection.BuildServiceProvider(true);
         }
